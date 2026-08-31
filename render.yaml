@@ -1,0 +1,17 @@
+# Plan de déploiement Render.
+# Sur Render : New → Blueprint → choisir ce dépôt. Tout est lu ici.
+services:
+  - type: web
+    name: jeu-poursuite
+    runtime: node
+    plan: starter            # « free » possible pour tester, mais SANS disque persistant
+    buildCommand: ""         # aucune dépendance : rien à installer
+    startCommand: node serveur.js
+    healthCheckPath: /api/sante
+    envVars:
+      - key: RENDER_DISK
+        value: /var/donnees
+    disk:
+      name: salons
+      mountPath: /var/donnees
+      sizeGB: 1

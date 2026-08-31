@@ -2,6 +2,7 @@
   "name": "jeu-poursuite-serveur",
   "version": "1.0.0",
   "private": true,
+  "description": "Serveur autoritaire du jeu de poursuite urbaine — zéro dépendance",
   "engines": { "node": ">=18" },
   "scripts": { "start": "node serveur.js" }
 }
